@@ -1,6 +1,6 @@
 {
   "name": "pixora-mascot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive sprite-based mascots for React applications",
   "main": "dist/pixora-mascot.umd.cjs",
   "module": "dist/pixora-mascot.js",
