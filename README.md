@@ -1,5 +1,10 @@
 
+# Access the website from here ---
+# https://pixoramascot.netlify.app/
+
 # Pixora Mascot
+
+
 
 Interactive sprite-based mascots for React applications.
 

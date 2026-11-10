@@ -13,15 +13,15 @@
     },
     "./style.css": "./dist/pixora-mascot.css"
   },
- "files": [
-  "dist",
-  "README.md",
-  "LICENSE"
-],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
-  "access": "public",
-  "registry": "https://registry.npmjs.org/"
-},
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "vite build"
   },
@@ -34,6 +34,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "pixora-mascot": "^1.0.0"
   }
-  
 }
