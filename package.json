@@ -1,7 +1,8 @@
+
 {
   "name": "pixora-mascot",
   "version": "1.0.1",
-  "description": "Interactive sprite-based mascots for React applications",
+  "description": "Screen-wide cursor-following sprite-based mascots for React applications",
   "main": "dist/pixora-mascot.umd.cjs",
   "module": "dist/pixora-mascot.js",
   "style": "dist/pixora-mascot.css",
@@ -34,8 +35,5 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vite": "^7.0.0"
-  },
-  "dependencies": {
-    "pixora-mascot": "^1.0.0"
   }
 }

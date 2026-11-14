@@ -1,14 +1,19 @@
 
-# Access the website from here ---
-# https://pixoramascot.netlify.app/
-
 # Pixora Mascot
 
-
+[Access the website](https://pixoramascot.netlify.app/)
 
 Interactive sprite-based mascots for React applications.
 
-Give your website personality with animated mascots that follow the cursor and react to clicks.
+Give your website personality with animated mascots that follow the cursor wherever it moves across the screen.
+
+## Features
+
+- **Screen-wide cursor tracking** – Mascots follow the cursor across the entire browser screen.
+- **9 directional views** – Supports a 3×3 direction sprite sheet.
+- **Custom sprite sheets** – Use your own mascot artwork.
+- **Configurable size** – Set the mascot width and height.
+- **Lightweight** – Simple React component with minimal setup.
 
 ## Installation
 
@@ -34,7 +39,6 @@ function App() {
     <div>
       <Mascot
         directions="/mascots/cat-directions.webp"
-        expressions="/mascots/cat-expressions.webp"
         size={150}
       />
     </div>
@@ -46,49 +50,42 @@ export default App;
 
 ## Props
 
-| Prop | Description | Default |
-|---|---|---|
-| directions | Direction sprite sheet URL | undefined |
-| expressions | Expression sprite sheet URL | undefined |
-| expressionFrames | Expression frame sequence | [0-8] |
-| size | Mascot width and height in pixels | 120 |
-| expressionDuration | Expression display duration in ms | 1200 |
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| directions | string | undefined | URL of the 3×3 direction sprite sheet |
+| size | number | 120 | Mascot width and height in pixels |
 
-## Features
+## Direction Sprite Sheet
 
-- Cursor-following animations
-- Click-triggered expressions
-- Custom sprite sheets
-- Configurable size
-- Lightweight React component
+Pixora uses a 3×3 sprite sheet containing nine different head directions.
+
+| Top-left | Top | Top-right |
+| Left | Front | Right |
+| Bottom-left | Down | Bottom-right |
+
+Each frame represents a different direction. The mascot automatically changes its direction based on the cursor position across the browser screen.
 
 ## Requirements
 
 - React 18 or later
 - React DOM 18 or later
 
-## License
+## CSS Import
 
-MIT
-```
-
-### 2. Important: CSS import
-
-In projects using your package, developers must import:
+Make sure to import the package stylesheet in your React application:
 
 ```jsx
 import 'pixora-mascot/style.css';
 ```
 
-This loads the package's compiled CSS.
+This loads the compiled CSS required to display your mascot correctly.
 
-### 3. Rebuild the package
+## Documentation
 
-From the `pixora-mascot` directory:
+For detailed instructions and examples, visit:
 
-```bash
-npm run build
-```
+[Pixora Documentation](https://pixoramascot.netlify.app/docs)
 
-Once this is done, we'll move to the next step: **publishing `pixora-mascot` on npm**, so anyone can install it using `npm install pixora-mascot`.
+## License
 
+MIT
