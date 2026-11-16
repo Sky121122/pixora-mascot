@@ -1,38 +1,27 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Mascot.css';
 
-function Mascot({
-  directions,
-  size = 120,
-}) {
+function Mascot({ directions, size = 120 }) {
   const [directionFrame, setDirectionFrame] = useState(4);
 
-  useEffect(() => {
-    if (!directions) return;
+  const handlePointerMove = (event) => {
+    if (event.pointerType === 'touch') return;
 
-    const handleMouseMove = (event) => {
-      const x = event.clientX / window.innerWidth;
-      const y = event.clientY / window.innerHeight;
+    const rect = event.currentTarget.getBoundingClientRect();
 
-      const column = x < 0.33 ? 0 : x > 0.67 ? 2 : 1;
-      const row = y < 0.33 ? 0 : y > 0.67 ? 2 : 1;
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
 
-      setDirectionFrame(row * 3 + column);
-    };
+    const column = x < 0.33 ? 0 : x > 0.67 ? 2 : 1;
+    const row = y < 0.33 ? 0 : y > 0.67 ? 2 : 1;
 
-    const handleMouseLeave = () => {
-      setDirectionFrame(4);
-    };
+    setDirectionFrame(row * 3 + column);
+  };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [directions]);
+  const handlePointerLeave = () => {
+    setDirectionFrame(4);
+  };
 
   if (!directions) return null;
 
@@ -51,6 +40,8 @@ function Mascot({
         backgroundRepeat: 'no-repeat',
         transition: 'none',
       }}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       aria-label="Interactive Pixora mascot"
       role="img"
     />
